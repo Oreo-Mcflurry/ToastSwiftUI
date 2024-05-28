@@ -28,17 +28,4 @@ public class Toast {
 		showToastWindow.isHidden = false
 		self.toastWindow = showToastWindow
 	}
-
-	public func showToast<Content: View>(_ view: () -> Content) -> UIWindow {
-		guard let windowScene else {
-			fatalError("You must register UIWindowScene with Toast.shared.setWindowScene(in:)")
-		}
-
-		let showToastWindow = UIWindow(windowScene: windowScene)
-		let toastViewController = UIHostingController(rootView: ToastView(toastView: view))
-		showToastWindow.rootViewController = toastViewController
-		toastViewController.view.backgroundColor = .clear
-		showToastWindow.isHidden = false
-		return showToastWindow
-	}
 }
