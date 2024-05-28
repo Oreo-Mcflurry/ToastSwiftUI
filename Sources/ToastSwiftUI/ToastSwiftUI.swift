@@ -5,7 +5,7 @@ import UIKit
 import SwiftUI
 
 public class Toast {
-	public let shared = Toast()
+	public static let shared = Toast()
 	private init() { }
 
 	private var windowScene: UIWindowScene?
