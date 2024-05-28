@@ -24,6 +24,7 @@ public class Toast {
 		let showToastWindow = UIWindow(windowScene: windowScene)
 		let toastViewController = UIHostingController(rootView: ToastView(toastView: view))
 		showToastWindow.rootViewController = toastViewController
+		showToastWindow.isHidden = false
 		self.toastWindow = showToastWindow
 	}
 }
