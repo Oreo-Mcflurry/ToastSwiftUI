@@ -21,10 +21,6 @@ public class Toast {
 			fatalError("You must register UIWindowScene with Toast.shared.setWindowScene(in:)")
 		}
 
-		guard toastWindow != nil else {
-			fatalError("You must register UIWindow with Toast.shared.setWindowScene(in:)")
-		}
-
 		let showToastWindow = UIWindow(windowScene: windowScene)
 		let toastViewController = UIHostingController(rootView: ToastView(toastView: view))
 		showToastWindow.rootViewController = toastViewController
