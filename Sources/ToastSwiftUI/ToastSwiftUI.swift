@@ -11,7 +11,7 @@ public class Toast {
 	private var windowScene: UIWindowScene?
 	private var toastWindow: UIWindow?
 
-	public func setWindowScene(windowScene: inout UIWindowScene, toastWindow: inout UIWindow?) {
+	public func setWindowScene(windowScene: UIWindowScene, toastWindow: inout UIWindow?) {
 		self.windowScene = windowScene
 		self.toastWindow = toastWindow
 	}
