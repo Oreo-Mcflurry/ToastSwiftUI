@@ -10,6 +10,7 @@ public class Toast {
 
 	private var windowScene: UIWindowScene?
 	private var toastWindow: UIWindow?
+//	public var configuration =
 
 	public func setWindowScene(windowScene: UIWindowScene, toastWindow: inout UIWindow?) {
 		self.windowScene = windowScene
@@ -18,11 +19,11 @@ public class Toast {
 
 	public func showToast<Content: View>(_ view: () -> Content) {
 		guard let windowScene else {
-			fatalError("You must register UIWindowScene with Toast.shared.setWindowScene(in:)")
+			fatalError("You must register UIWindowScene with Toast.shared.setWindowScene()")
 		}
 
 		let showToastWindow = UIWindow(windowScene: windowScene)
-		let toastViewController = UIHostingController(rootView: ToastView(toastView: view))
+		let toastViewController = UIHostingController(rootView: ToastCustomContentView(toastView: view))
 		showToastWindow.rootViewController = toastViewController
 		toastViewController.view.backgroundColor = .clear
 		showToastWindow.isHidden = false

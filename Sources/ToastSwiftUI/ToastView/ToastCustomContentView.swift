@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToastView<Content: View>: View {
+struct ToastCustomContentView<Content: View>: View {
 	let toastView: Content
 
 	init(@ViewBuilder toastView: () -> Content) {
