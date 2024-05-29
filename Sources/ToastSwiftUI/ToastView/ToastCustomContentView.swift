@@ -16,5 +16,6 @@ struct ToastCustomContentView<Content: View>: View {
 
 	var body: some View {
 		toastView
+			.padding()
 	}
 }
