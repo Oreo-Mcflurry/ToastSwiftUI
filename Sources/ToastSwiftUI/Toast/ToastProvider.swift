@@ -15,7 +15,7 @@ public class ToastProvider {
 		self.toastShared = Toast.shared
 	}
 
-	private func makeToast(_ toastViewController: UIViewController) {
+	private func makeToast(_ toastViewController: UIViewController, with configuration: ToastConfigutaion) {
 		guard let windowScene = toastShared.windowScene else {
 			fatalError("You must register UIWindowScene with Toast.shared.setWindowScene()")
 		}
@@ -23,12 +23,19 @@ public class ToastProvider {
 		let showToastWindow = UIWindow(windowScene: windowScene)
 		showToastWindow.rootViewController = toastViewController
 		toastViewController.view.backgroundColor = .clear
-		showToastWindow.isHidden = false
 		toastShared.toastWindow = showToastWindow
+		showToastWindow.isHidden = false
+
+		DispatchQueue.main.asyncAfter(deadline: .now() + configuration.duraration) {
+			showToastWindow.isHidden = true
+		}
 	}
 
-	func showToast<Content: View>(_ view: () -> Content) {
-		let toastVC = UIHostingController(rootView: ToastCustomContentView(toastView: view))
-		self.makeToast(toastVC)
+	public func showToast<Content: View>(
+		_ view: () -> Content,
+		configuration: ToastConfigutaion = Toast.shared.configuration
+	) {
+		let toastVC = UIHostingController(rootView: ToastCustomContentView(toastView: view, configuration: configuration))
+		self.makeToast(toastVC, with: configuration)
 	}
 }

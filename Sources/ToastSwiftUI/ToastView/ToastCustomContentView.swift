@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ToastCustomContentView<Content: View>: ToastView {
-	var configuration: ToastConfigutaion
 	let toastView: Content
+	var configuration: ToastConfigutaion
 
 	init(
 		@ViewBuilder toastView: () -> Content,
-		configuration: ToastConfigutaion = Toast.shared.configuration
+		configuration: ToastConfigutaion
 	) {
 		self.toastView = toastView()
 		self.configuration = configuration
@@ -21,6 +21,7 @@ struct ToastCustomContentView<Content: View>: ToastView {
 
 	var body: some View {
 		toastView
+			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: configuration.alignemnt)
 			.padding()
 	}
 }
