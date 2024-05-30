@@ -11,7 +11,7 @@ public class ToastProvider {
 
 	private let toastShared: Toast
 
-	init() {
+	public init() {
 		self.toastShared = Toast.shared
 	}
 
