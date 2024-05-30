@@ -21,7 +21,7 @@ struct ToastCustomContentView<Content: View>: ToastView {
 
 	var body: some View {
 		toastView
-			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: configuration.alignemnt)
-			.padding()
+//			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: configuration.alignemnt)
+//			.padding()
 	}
 }
