@@ -15,6 +15,6 @@ public class Toast {
 	public func setWindowScene(windowScene: UIWindowScene, toastWindow: inout UIWindow?) {
 		self.windowScene = windowScene
 		self.toastWindow = toastWindow
-		self.toastWindow?.windowLevel = .alert
+		self.toastWindow?.windowLevel = .statusBar
 	}
 }
