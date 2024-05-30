@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 protocol ToastView: View {
-
+	var configuration: ToastConfigutaion { get }
 }
