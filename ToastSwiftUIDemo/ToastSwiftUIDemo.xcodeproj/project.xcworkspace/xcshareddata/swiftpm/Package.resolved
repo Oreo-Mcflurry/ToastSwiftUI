@@ -1,0 +1,15 @@
+{
+  "originHash" : "9893bd9f4c419bd18aca0fc271a0f098c099b4ec0b949faff9b10308ccd3a5ac",
+  "pins" : [
+    {
+      "identity" : "toastswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Oreo-Mcflurry/ToastSwiftUI.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c8126db8e5b91f40c1d260c816d28fe54f116200"
+      }
+    }
+  ],
+  "version" : 3
+}

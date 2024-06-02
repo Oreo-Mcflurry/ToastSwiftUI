@@ -22,5 +22,6 @@ let package = Package(
         .testTarget(
             name: "ToastSwiftUITests",
             dependencies: ["ToastSwiftUI"]),
+		 
     ]
 )
